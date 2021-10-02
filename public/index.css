@@ -59,5 +59,14 @@ a {
 }
 
 .contributor {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-rg);
+}
+
+.contributor-description {
     text-align: center;
+    flex-basis: 60%;
 }
