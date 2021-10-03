@@ -1,72 +1,66 @@
 /* Variables */
 :root {
-    --space-xs: 0.64rem;
-    --space-sm: 0.8rem;
-    --space-rg: 1rem;
-    --space-md: 1.25rem;
-    --space-lg: 1.563rem;
+  --space-xs: 0.64rem;
+  --space-sm: 0.8rem;
+  --space-rg: 1rem;
+  --space-md: 1.25rem;
+  --space-lg: 1.563rem;
 
-    --text-size-xs: 0.64rem;
-    --text-size-sm: 0.8rem;
-    --text-size-rg: 1rem;
-    --text-size-md: 1.25rem;
-    --text-size-lg: 1.563rem;
+  --text-size-xs: 0.64rem;
+  --text-size-sm: 0.8rem;
+  --text-size-rg: 1rem;
+  --text-size-md: 1.25rem;
+  --text-size-lg: 1.563rem;
+
+  --color-blue: #2670f5;
 }
 
 /* Reset */
-*, 
+*,
 *::before,
-*::after{
-    box-sizing: border-box;
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
+  margin: 0;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #eceff1;
+  color: #030f25;
+}
+
+button,
+.button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #2670f5;
+  color: #2670f5;
+  cursor: pointer;
+  transform: scale(1);
+  transition: color 0.1s ease-out, background-color 0.1s ease-out,
+    transform 0.1s ease-out;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #2670f5;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+body,
+#root,
+#root > div {
+  min-height: 100vh;
+  height: 100vh;
 }
 
 h1,
 a {
-    margin: 0;
-}
-
-/* Utility */
-.content > * + * {
-    margin-bottom: var(--space-rg);
-}
-
-/* Main */
-.header {
-    display: flex;
-    position: sticky;
-    align-items: center;
-    padding: 0 var(--space-rg);
-    margin: var(--space-lg) 0;
-}
-
-.header > img {
-    width: 20rem;
-    margin: 0 auto;
-}
-
-.container {
-    display: block;
-    max-width: 75rem;
-    margin: 0 auto;
-    padding: 0 var(--space-rg);
-}
-
-.contributor {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-rg);
-}
-
-.contributor-description {
-    text-align: center;
-    flex-basis: 60%;
+  margin: 0;
 }

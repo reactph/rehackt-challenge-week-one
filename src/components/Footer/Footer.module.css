@@ -1,0 +1,48 @@
+.container {
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer {
+  display: flex;
+  position: sticky;
+  padding: var(--space-sm) var(--space-md);
+  grid-area: footer;
+  justify-content: flex-end;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.sponsor {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-left: var(--space-md);
+}
+
+.sponsor p {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.sponsor img {
+  height: 40px;
+  margin-left: var(--space-sm);
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  transform: skewY(-1deg);
+  transform-origin: top left;
+  margin-top: 30px;
+  z-index: 0;
+}
