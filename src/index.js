@@ -1,17 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useContext } from "react"
+import ReactDOM from "react-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import ContributorDetails from "./ContributorDetails"
+import EntriesProvider, { EntriesContext } from "./EntriesProvider"
+
+const generateRoutes = (entries) => {
+    if(entries.length === 0){
+        return null
+    } 
+
+    return [
+        <Route path="/" key="default" exact component={entries[0].component} />,
+        ...entries.map((entry) => (
+            <Route path={`/${entry.slug}`} key={entry.slug} component={entry.component} />
+        ))
+    ]
+}
+
+const App = () => {
+    const {entries, currentSlug} = useContext(EntriesContext)
+
+    return (
+        <div className="container">
+            <div className="content">
+                <Switch>{generateRoutes(entries)}</Switch>
+                <ContributorDetails entries={entries} currentSlug={currentSlug} />
+            </div>
+        </div>
+    )
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <BrowserRouter>
+        <EntriesProvider>
+            <App />
+        </EntriesProvider>
+    </BrowserRouter>,
+    document.getElementById("root")
+)
