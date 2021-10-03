@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { Suspense, useContext } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import ContributorDetails from "./ContributorDetails"
@@ -27,8 +27,10 @@ const App = () => {
   return (
     <div className="container">
       <div className="content">
-        <Switch>{generateRoutes(entries)}</Switch>
-        <ContributorDetails entries={entries} currentSlug={currentSlug} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>{generateRoutes(entries)}</Switch>
+          <ContributorDetails entries={entries} currentSlug={currentSlug} />
+        </Suspense>
       </div>
     </div>
   )

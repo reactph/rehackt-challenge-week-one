@@ -1,20 +1,12 @@
-import AnotherSample from "./AnotherSample/AnotherSample"
-import SampleEntry from "./SampleEntry/SampleEntry"
+import { lazy } from "react"
 
 const entries = [
   {
-    component: SampleEntry,
+    component: lazy(() => import("./SampleEntry/SampleEntry")),
     title: "Sample Entry",
     author: "ReactJS Philippines",
     website: "reactjs.org.ph",
     slug: "sample-entry",
-  },
-  {
-    component: AnotherSample,
-    title: "Another Sample",
-    author: "ReactJS Philippines",
-    website: "reactjs.org.ph",
-    slug: "another-sample",
   },
 ]
 
