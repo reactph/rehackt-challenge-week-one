@@ -1,20 +1,10 @@
 import React from "react"
-import { useLocation, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
-const getCurrentSlug = (location) => {
-    const paths = location.pathname.split("/")
 
-    if(paths.length > 0){
-        return paths[1]
-    }    
-
-    return null
-}
-
-const ContributorDetails = ({ entries }) => {
-    const location = useLocation()
+const ContributorDetails = ({ entries, currentSlug }) => {
     const history = useHistory()
-    const currentSlug = getCurrentSlug(location)
+    console.log(entries)
     
     let currentEntryIndex = 0
     if(!!currentSlug){

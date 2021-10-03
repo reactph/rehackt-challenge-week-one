@@ -1,9 +1,8 @@
-import arrayShuffle from "array-shuffle"
-import React from "react"
+import React, { useContext } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import ContributorDetails from "./ContributorDetails"
-import entries from "./entries"
+import EntriesProvider, { EntriesContext } from "./EntriesProvider"
 
 const generateRoutes = (entries) => {
     if(entries.length === 0){
@@ -11,28 +10,31 @@ const generateRoutes = (entries) => {
     } 
 
     return [
-        <Route path="/" key="default" exact>
-            {entries[0].component}
-        </Route>,
+        <Route path="/" key="default" exact component={entries[0].component} />,
         ...entries.map((entry) => (
-            <Route path={`/${entry.slug}`} key={entry.slug}>
-                {entry.component}
-            </Route>
+            <Route path={`/${entry.slug}`} key={entry.slug} component={entry.component} />
         ))
     ]
 }
 
 const App = () => {
-    const shuffledEntries = arrayShuffle(entries)
+    const {entries, currentSlug} = useContext(EntriesContext)
 
     return (
         <div className="container">
             <div className="content">
-                <Switch>{generateRoutes(shuffledEntries)}</Switch>
-                <ContributorDetails entries={shuffledEntries} />
+                <Switch>{generateRoutes(entries)}</Switch>
+                <ContributorDetails entries={entries} currentSlug={currentSlug} />
             </div>
         </div>
     )
 }
 
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById("root"))
+ReactDOM.render(
+    <BrowserRouter>
+        <EntriesProvider>
+            <App />
+        </EntriesProvider>
+    </BrowserRouter>,
+    document.getElementById("root")
+)
