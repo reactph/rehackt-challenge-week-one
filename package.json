@@ -28,7 +28,7 @@
     "eject": "react-scripts eject",
     "lint-staged": "lint-staged",
     "lint": "eslint src --fix",
-    "format": "prettier --write src/**",
+    "format": "prettier --write src/**"
   },
   "eslintConfig": {
     "extends": [
