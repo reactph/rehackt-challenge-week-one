@@ -22,6 +22,16 @@ const entries = [
     linkedIn: "https://www.linkedin.com/in/fssaycon/",
     website: "https://fsaycon.dev",
   },
+  {
+    component: lazy(() => import("./RollForVolume/RollForVolume")),
+    slug: "RollForVolume",
+    title: "Roll for volume",
+    description: "Feeling lucky, are we?",
+    author: "Insidiae",
+    email: "insidiae423@gmail.com",
+    linkedIn: "https://www.linkedin.com/in/insidiae423/",
+    website: "https://github.com/Insidiae",
+  },
 ]
 
 export default entries
