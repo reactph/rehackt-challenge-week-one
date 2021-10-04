@@ -2,8 +2,8 @@ import { lazy } from "react"
 
 // FORMAT
 // component: your component  (required)
-// slug: your component name (required)
-// title: (required)
+// slug: your component name (must be unique) (required)
+// title:  (required)
 // description: limit to 256 characters.
 // author: your name/alias (required)
 // email: your email address
@@ -14,13 +14,13 @@ const entries = [
   {
     component: lazy(() => import("./SampleEntry/SampleEntry")),
     slug: "SampleEntry",
-    title: "Sample Entry",
+    title: "(Sample) Press To Chill",
     description:
-      "This entry was inspired by my great great great granduncle who was a veteran of the Star Wars.",
-    author: "Juan dela Cruz",
-    email: "juandc@gmail.com",
-    linkedIn: "https://www.linkedin.com/in/juan-dela-cruz-b40a1b97/",
-    website: "juandc.ph",
+      "A simple untouched input range slider with the use of styled-components for styling and audio context API.",
+    author: "Franrey Saycon",
+    email: "franreysaycon@gmail.com",
+    linkedIn: "https://www.linkedin.com/in/fssaycon/",
+    website: "https://fsaycon.dev",
   },
 ]
 

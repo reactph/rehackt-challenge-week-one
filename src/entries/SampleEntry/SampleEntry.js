@@ -60,26 +60,29 @@ const SampleEntry = () => {
   const completeAssets = assetsLoaded > 1
 
   const playSound = async () => {
-    const audioContext = new AudioContext()
-    const audioGain = audioContext.createGain()
-    const audioSource = audioContext.createBufferSource()
-    const audioBuffer = await fetch("/sample.mp3")
-      .then((res) => res.arrayBuffer())
-      .then((buffer) => audioContext.decodeAudioData(buffer))
+    if (!audioContextRef.current) {
+      const audioContext = new AudioContext()
+      audioContextRef.current = audioContext
+      const audioGain = audioContext.createGain()
+      const audioSource = audioContext.createBufferSource()
+      const audioBuffer = await fetch("/sample.mp3")
+        .then((res) => res.arrayBuffer())
+        .then((buffer) => audioContext.decodeAudioData(buffer))
 
-    audioSource.buffer = audioBuffer
-    audioSource.connect(audioGain)
+      audioSource.buffer = audioBuffer
+      audioSource.connect(audioGain)
 
-    audioGain.connect(audioContext.destination)
-    audioGain.gain.setValueAtTime(1, audioContext.currentTime)
+      audioGain.connect(audioContext.destination)
+      audioGain.gain.setValueAtTime(1, audioContext.currentTime)
 
-    audioSource.start()
-    audioSource.onended = () => {
-      setChillTime(false)
+      audioSource.start()
+      audioSource.onended = () => {
+        setChillTime(false)
+      }
+      audioGainRef.current = audioGain
+      audioContextRef.current = audioContext
+      setChillTime(true)
     }
-    audioGainRef.current = audioGain
-    audioContextRef.current = audioContext
-    setChillTime(true)
   }
 
   const changeVolume = (event) => {
