@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react"
 import { ClipLoader } from "react-spinners"
 import styled, { keyframes } from "styled-components"
 
+import BaseEntry from "../../components/BaseEntry/BaseEntry"
+
 const appearAnimation = keyframes`
   from {
     opacity: 0;
@@ -10,12 +12,6 @@ const appearAnimation = keyframes`
   to {
     opacity: 1;
   }
-`
-
-const Container = styled.div`
-  max-width: 800px;
-  height: 600px;
-  margin: 0 auto;
 `
 
 const Content = styled.div`
@@ -117,7 +113,7 @@ const SampleEntry = () => {
   }, [])
 
   return (
-    <Container>
+    <BaseEntry>
       {completeAssets ? (
         <Content>
           {chillTime ? (
@@ -141,7 +137,7 @@ const SampleEntry = () => {
           )}
         </Placeholder>
       )}
-    </Container>
+    </BaseEntry>
   )
 }
 

@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entryCard {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.arrow {
+  margin: 0 24px;
+  opacity: 0.5;
+  color: black;
+  transform: scale(1);
+  transition: opacity 0.1s ease-out, color 0.1s ease-out,
+    transform 0.1s ease-out;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  transform: scale(1.05);
+  color: #2670f5;
+  opacity: 1;
+}

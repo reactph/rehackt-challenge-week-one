@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  position: sticky;
+  padding: var(--space-rg) var(--space-md);
+  grid-area: header;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  height: 60px;
+}
+
+.challengeInfo {
+  text-align: center;
+  max-width: 450px;
+}
+
+.challengeInfo h2 {
+  margin: 0;
+  font-style: italic;
+}
+
+.challengeInfo p {
+  margin: 0;
+}
+
+.buttonMenu > * {
+  margin: 0 4px;
+}

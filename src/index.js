@@ -1,37 +1,22 @@
-import React, { Suspense, useContext } from "react"
+import React, { Suspense } from "react"
 import ReactDOM from "react-dom"
-import { BrowserRouter, Route, Switch } from "react-router-dom"
-import ContributorDetails from "./ContributorDetails"
-import EntriesProvider, { EntriesContext } from "./EntriesProvider"
-
-const generateRoutes = (entries) => {
-  if (entries.length === 0) {
-    return null
-  }
-
-  return [
-    <Route path="/" key="default" exact component={entries[0].component} />,
-    ...entries.map((entry) => (
-      <Route
-        path={`/${entry.slug}`}
-        key={entry.slug}
-        component={entry.component}
-      />
-    )),
-  ]
-}
+import { BrowserRouter } from "react-router-dom"
+import Header from "./components/Header/Header"
+import EntriesProvider from "./EntriesProvider"
+import styles from "./App.module.css"
+import EntryCard from "./components/EntryCard/EntryCard"
+import Footer from "./components/Footer/Footer"
 
 const App = () => {
-  const { entries, currentSlug } = useContext(EntriesContext)
-
   return (
-    <div className="container">
-      <div className="content">
+    <div className={styles.app}>
+      <Header />
+      <main className={styles.container}>
         <Suspense fallback={<div>Loading...</div>}>
-          <Switch>{generateRoutes(entries)}</Switch>
-          <ContributorDetails entries={entries} currentSlug={currentSlug} />
+          <EntryCard />
         </Suspense>
-      </div>
+      </main>
+      <Footer />
     </div>
   )
 }
