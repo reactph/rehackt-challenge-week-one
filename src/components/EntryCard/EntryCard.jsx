@@ -36,21 +36,18 @@ const EntryCard = () => {
     currentEntryIndex = entries.findIndex((entry) => entry.slug === currentSlug)
   }
 
-  const previous =
-    currentEntryIndex > 0
-      ? entries[currentEntryIndex - 1]
-      : entries[entries.length - 1]
+  const previous = currentEntryIndex > 0 ? entries[currentEntryIndex - 1] : null
   const next =
     currentEntryIndex < entries.length - 1
       ? entries[currentEntryIndex + 1]
-      : entries[0]
+      : null
 
   return (
     <div className={styles.container}>
       <FontAwesomeIcon
         icon={faArrowCircleLeft}
         size="3x"
-        className={styles.arrow}
+        className={previous ? styles.arrow : styles["arrow-disabled"]}
         onClick={() => previous && history.push(`${previous.slug}`)}
       />
       <div className={styles.entryCard}>
@@ -60,7 +57,7 @@ const EntryCard = () => {
       <FontAwesomeIcon
         icon={faArrowAltCircleRight}
         size="3x"
-        className={styles.arrow}
+        className={next ? styles.arrow : styles["arrow-disabled"]}
         onClick={() => next && history.push(`${next.slug}`)}
       />
     </div>

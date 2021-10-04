@@ -36,3 +36,10 @@
   color: #2670f5;
   opacity: 1;
 }
+
+.arrow-disabled {
+  margin: 0 24px;
+  opacity: 0.2;
+  color: black;
+  cursor: default;
+}
