@@ -5,7 +5,7 @@ import styles from "./EntryCard.module.css"
 import { EntriesContext } from "../../EntriesProvider"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
-  faArrowAltCircleRight,
+  faArrowCircleRight,
   faArrowCircleLeft,
 } from "@fortawesome/free-solid-svg-icons"
 import { useHistory } from "react-router"
@@ -55,7 +55,7 @@ const EntryCard = () => {
         <ContributorDetails entries={entries} currentSlug={currentSlug} />
       </div>
       <FontAwesomeIcon
-        icon={faArrowAltCircleRight}
+        icon={faArrowCircleRight}
         size="3x"
         className={next ? styles.arrow : styles["arrow-disabled"]}
         onClick={() => next && history.push(`${next.slug}`)}
