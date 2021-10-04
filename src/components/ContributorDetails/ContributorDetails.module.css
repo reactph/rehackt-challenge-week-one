@@ -1,0 +1,46 @@
+.contributor {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  max-width: 400px;
+  width: fit-content;
+  padding: var(--space-lg);
+  justify-content: space-between;
+}
+
+.entryInfo > h1,
+.entryInfo > p {
+  margin: 2px 0 0 0;
+}
+
+.authorInfo {
+  padding: 12px 20px;
+  background: #efefef;
+  border-radius: 12px;
+}
+
+.authorInfoItem {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+.authorInfoItem:hover {
+  text-decoration: underline;
+}
+
+#authorName {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.authorInfoItem > p {
+  text-decoration: none;
+  margin: 0 0 0 8px;
+}

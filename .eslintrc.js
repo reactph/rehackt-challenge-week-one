@@ -1,39 +1,23 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard',
-    'prettier',
-  ],
+  extends: ["plugin:react/recommended", "standard", "prettier"],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 12,
-    sourceType: 'module'
+    sourceType: "module",
   },
-  plugins: [
-    'react',
-    'prettier'
-  ],
+  plugins: ["react", "prettier"],
   rules: {
-    "prettier/prettier":  [
-      "warn",
-      {
-        endOfLine: "lf",
-        semi: false,
-        singleQuote: false,
-        tabWidth: 2,
-        trailingComma: "es5",
-      },
-    ],
+    "prettier/prettier": "warn",
   },
   settings: {
     react: {
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
 }
