@@ -28,7 +28,9 @@ const Content = styled.div`
   display: flex;
   flex-basis: 100%;
   min-height: 100%;
-  background: #f5f5f5 url(/sample-bg.gif) no-repeat center;
+  background: #f5f5f5
+    url("https://images.unsplash.com/photo-1519744346361-7a029b427a59")
+    no-repeat center;
   background-size: cover;
   align-items: center;
   justify-content: center;
@@ -67,13 +69,13 @@ const Row = styled.div`
 
 const TotalVolume = styled.h2`
   color: white;
-  font-family: Poiret One;
+  font-family: "Merriweather Sans";
   text-align: center;
   font-size: 2rem;
 `
 
 const PressContainer = styled.div`
-  font-family: Poiret One;
+  font-family: "Merriweather Sans";
   font-size: 3rem;
   font-weight: 400;
   margin: 0 auto;
@@ -157,8 +159,8 @@ const RollForVolume = () => {
     try {
       const loadFont = async () => {
         const customFont = new FontFace(
-          "Poiret One",
-          "url(/fonts/PoiretOne-Regular.woff2)"
+          "Merriweather Sans",
+          "url(https://fonts.gstatic.com/s/merriweathersans/v14/2-cO9IRs1JiJN1FRAMjTN5zd9vgsFF_5asQTb6hZ2JKZou4ViesH.woff2)"
         )
         await customFont.load()
         document.fonts.add(customFont)
