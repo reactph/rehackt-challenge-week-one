@@ -40,7 +40,7 @@ Your volume control need not actually play any audio, but if you wish for it to 
     yarn start
     ```
 
-1. Run the script below and answer the questions shown. This will generate your entry folder in `/src/entries/[EntryName]` and add your entry in the `/src/entries/index.js` module. All files pertaining to your entry should be placed in your entry folder.
+1. Run the script below to generate starter code for your entry and answer the prompts as they appear. A folder `/src/entries/[EntryName]` will be created for you where you must place all the files pertaining to your entry.
 
     ```sh
     node generate-entry.js
@@ -48,7 +48,7 @@ Your volume control need not actually play any audio, but if you wish for it to 
 
     ![generate-entry.js](https://i.imgur.com/1aONFZx.jpg)
 
-    > You could also manually do this by following these steps
+    > You may also opt to do this manually by following these steps:
     >
     > 1. For your submission, create a folder `/src/entries/[EntryName]`, where `[EntryName]` is the name of your entry in `PascalCase`.
     >
