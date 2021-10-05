@@ -147,7 +147,6 @@ async function main() {
     return
   }
 
-  // TODO: Add jsx template that uses <BaseEntry />
   try {
     await fs.promises.writeFile(
       `${componentDirPath}/${answers.slug}.jsx`,
@@ -186,7 +185,6 @@ async function main() {
     answersString.lastIndexOf("\n}")
   )},\n  },\n]\n\n`
 
-  // TODO: Add entry info at entries/index.js
   const newEntriesData = Object.assign([], entriesSubstrings.splice(1), {
     2: entriesArray,
     5: "\n",
