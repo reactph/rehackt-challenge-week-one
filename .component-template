@@ -1,0 +1,13 @@
+import React from "react"
+
+import BaseEntry from "../../components/BaseEntry/BaseEntry"
+
+const SampleEntry = () => {
+  return (
+    <BaseEntry>
+      <h1>Place your code here</h1>
+    </BaseEntry>
+  )
+}
+
+export default SampleEntry
