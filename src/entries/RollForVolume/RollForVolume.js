@@ -99,12 +99,12 @@ const RollForVolume = () => {
   const [diceValues, setDiceValues] = useState(Array(16).fill(6))
   const audioGainRef = useRef()
   const audioContextRef = useRef()
+  const audioSourceRef = useRef()
   const completeAssets = assetsLoaded > 1
 
   const playSound = async () => {
     if (!audioContextRef.current) {
       const audioContext = new AudioContext()
-      audioContextRef.current = audioContext
       const audioGain = audioContext.createGain()
       const audioSource = audioContext.createBufferSource()
       const audioBuffer = await fetch("/sample.mp3")
@@ -113,6 +113,7 @@ const RollForVolume = () => {
 
       audioSource.buffer = audioBuffer
       audioSource.connect(audioGain)
+      audioSource.loop = true
 
       audioGain.connect(audioContext.destination)
       audioGain.gain.setValueAtTime(0.96, audioContext.currentTime)
@@ -121,8 +122,10 @@ const RollForVolume = () => {
       audioSource.onended = () => {
         setChillTime(false)
       }
+
       audioGainRef.current = audioGain
       audioContextRef.current = audioContext
+      audioSourceRef.current = audioSource
       setChillTime(true)
     }
   }
@@ -175,6 +178,12 @@ const RollForVolume = () => {
       }
     } catch {
       setAssetsError(true)
+    }
+
+    return () => {
+      if (audioSourceRef.current) {
+        audioSourceRef.current.stop()
+      }
     }
   }, [])
 
