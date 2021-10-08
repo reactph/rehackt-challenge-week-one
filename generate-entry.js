@@ -183,7 +183,9 @@ async function main() {
   )}  ${answersString.substring(
     0,
     answersString.lastIndexOf("\n}")
-  )},\n  },\n]\n\n`
+  )},\n    component: lazy(() => import("./${answers.slug}/${
+    answers.slug
+  }")),\n  },\n]\n\n`
 
   const newEntriesData = Object.assign([], entriesSubstrings.splice(1), {
     2: entriesArray,
