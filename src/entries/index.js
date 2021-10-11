@@ -32,6 +32,16 @@ const entries = [
     linkedIn: "https://www.linkedin.com/in/insidiae423/",
     website: "https://github.com/Insidiae",
   },
+  {
+    component: lazy(() => import("./Snek/Snek")),
+    title: "Snek",
+    slug: "Snek",
+    description: `Play a game of snake to adjust the volume. Get pellets to increase the volume and bite your own body to decrease it. Use the arrow keys to control the snake's direction and press start to play.`,
+    author: "Carl de Guia",
+    email: "carl.2795@gmail.com",
+    linkedIn: "https://www.linkedin.com/in/carl-justin-de-guia-b40a1b97/",
+    website: "https://github.com/carldegs",
+  },
 ]
 
 export default entries
