@@ -4,7 +4,7 @@
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
-  background-image: url("../images/background.png");
+  background-image: url("../images/background1.png");
   height: 100%;
   width: 800px;
   background-position: bottom;
@@ -19,7 +19,7 @@
 .div2 {
   grid-area: 1 / 2 / 4 / 3;
   text-align: center;
-  background-image: url("../images/light.png");
+  background-image: url("../images/light1.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -80,5 +80,5 @@
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
-  
+
 }
