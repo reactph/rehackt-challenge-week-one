@@ -42,6 +42,16 @@ const entries = [
     linkedIn: "https://www.linkedin.com/in/carl-justin-de-guia-b40a1b97/",
     website: "https://github.com/carldegs",
   },
+  {
+    title: "Alien Abduction Volume",
+    slug: "AlienAbduction",
+    description: "",
+    author: "Boone Raye Flores",
+    email: "booneraye@gmail.com",
+    linkedIn: "https://www.linkedin.com/in/booneraye",
+    website: "https://github.com/booneraye",
+    component: lazy(() => import("./AlienAbduction/AlienAbduction")),
+  },
 ]
 
 export default entries
