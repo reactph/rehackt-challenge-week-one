@@ -63,7 +63,6 @@ const AlienAbduction = () => {
     }
   }, [])
 
-  console.log(volume)
 
   return (
     <BaseEntry>

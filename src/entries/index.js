@@ -51,6 +51,7 @@ const entries = [
     linkedIn: "https://www.linkedin.com/in/booneraye",
     website: "https://github.com/booneraye",
     component: lazy(() => import("./AlienAbduction/AlienAbduction")),
+    
   },
 ]
 
