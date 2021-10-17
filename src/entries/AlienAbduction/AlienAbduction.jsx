@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react"
 
 import BaseEntry from "../../components/BaseEntry/BaseEntry"
-import Alienship from "./images/alienship1.png"
-import Cow from "./images/cow1.png"
+import Alienship from "./images/alienship.png"
+import Cow from "./images/cow.png"
 import Cow2 from "./images/cow2.png"
 import "./styles/style.css"
 
