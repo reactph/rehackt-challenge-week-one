@@ -16,7 +16,6 @@ const AlienAbduction = () => {
 
   const playSound = async () => {
     if (!audioContextRef.current) {
-      
       const audioContext = new AudioContext()
       const audioGain = audioContext.createGain()
       const audioSource = audioContext.createBufferSource()
