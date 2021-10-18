@@ -53,6 +53,17 @@ const entries = [
     website: "https://github.com/booneraye",
     component: lazy(() => import("./AlienAbduction/AlienAbduction")),
   },
+  {
+    component: lazy(() => import("./Quiz/Quiz")),
+    slug: "Quiz",
+    title: "Answer to hear",
+    description:
+      "Select the correct answer to increase the volume or else it will decrease",
+    author: "Enrik Sabalvaro",
+    email: "enriksabalvaro7@gmail.com",
+    linkedIn: "https://www.linkedin.com/in/enrik-sabalvaro-6380241ba/",
+    website: "https://github.com/enriksabalvaro",
+  },
 ]
 
 export default entries
