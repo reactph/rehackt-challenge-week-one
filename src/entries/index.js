@@ -43,7 +43,7 @@ const entries = [
     website: "https://github.com/carldegs",
   },
   {
-    title: "Alien Abduction Volume",
+    title: "Alien Abduction Volume Slider",
     slug: "AlienAbduction",
     description:
       "Slide the volume by 'Saving the Cow', or 'Let the Cow be abducted by aliens'!",
