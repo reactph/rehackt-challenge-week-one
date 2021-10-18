@@ -45,7 +45,8 @@ const entries = [
   {
     title: "Alien Abduction Volume",
     slug: "AlienAbduction",
-    description: "Slide the volume by 'Saving the Cow', or 'Let the Cow be abducted by aliens'!",
+    description:
+      "Slide the volume by 'Saving the Cow', or 'Let the Cow be abducted by aliens'!",
     author: "Boone Raye Flores",
     email: "booneraye@gmail.com",
     linkedIn: "https://www.linkedin.com/in/booneraye",

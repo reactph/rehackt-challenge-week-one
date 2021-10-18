@@ -56,10 +56,10 @@
 .btn-cancel {
   background: #da3535;
   background-image: -webkit-linear-gradient(top, #db3434, #b92929);
-  background-image: -moz-linear-gradient(top,  #db3434, #b92929);
-  background-image: -ms-linear-gradient(top,  #db3434, #b92929);
-  background-image: -o-linear-gradient(top,  #db3434, #b92929);
-  background-image: linear-gradient(to bottom,  #db3434, #b92929);
+  background-image: -moz-linear-gradient(top, #db3434, #b92929);
+  background-image: -ms-linear-gradient(top, #db3434, #b92929);
+  background-image: -o-linear-gradient(top, #db3434, #b92929);
+  background-image: linear-gradient(to bottom, #db3434, #b92929);
   -webkit-border-radius: 7;
   -moz-border-radius: 7;
   border: 0px;

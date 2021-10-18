@@ -62,7 +62,6 @@ const AlienAbduction = () => {
     }
   }, [])
 
-
   return (
     <BaseEntry>
       <div className="container">
