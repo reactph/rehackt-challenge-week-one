@@ -146,17 +146,10 @@ const ClickSpeed = () => {
     }
 
     changeVolume(clicksPerS * 10)
-    console.log("Volume", clicksPerS * 10)
-    console.log("Idle Time", idleTime)
-    console.log("Clicks: ", normalize(clicks))
-    console.log("CPS: ", normalize(clicksPerS))
-    console.log("Max CPS: ", normalize(maxCPS))
-    console.log("Time: ", normalize(activeTime / 1000))
   }
 
   const mouseUp = () => {
     const newEndTime = getCurrentTime()
-    console.log("End Time", newEndTime)
     setEndTime(newEndTime)
   }
 
