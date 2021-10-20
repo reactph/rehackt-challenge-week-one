@@ -53,6 +53,16 @@ const entries = [
     website: "https://github.com/booneraye",
     component: lazy(() => import("./AlienAbduction/AlienAbduction")),
   },
+  {
+    title: "ClickSpeed",
+    slug: "ClickSpeed",
+    description: "Control the volume base on how fast an individual can click",
+    author: "Alleo Indong",
+    email: "",
+    linkedIn: "",
+    website: "https://github.com/aindong",
+    component: lazy(() => import("./ClickSpeed/ClickSpeed")),
+  },
 ]
 
 export default entries
