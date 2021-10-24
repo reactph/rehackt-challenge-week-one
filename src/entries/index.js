@@ -63,6 +63,17 @@ const entries = [
     website: "https://github.com/aindong",
     component: lazy(() => import("./ClickSpeed/ClickSpeed")),
   },
+  {
+    component: lazy(() => import("./TextTypingGame/TextTypingGame")),
+    slug: "TextTypingGame",
+    title: "The Text Typing Game",
+    description:
+      "Type the correct words to increase the volume. Press Enter or click the button to start",
+    author: "Brian Sayen",
+    email: "briankarlsayen@gmail.com",
+    linkedIn: "www.linkedin.com/in/brian-karl-sayen-866962220",
+    website: "https://github.com/briankarlsayen",
+  },
 ]
 
 export default entries
