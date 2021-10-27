@@ -1,9 +1,9 @@
 import BaseEntry from "../../components/BaseEntry/BaseEntry"
-import React, {useState, useEffect, useRef} from 'react'
-import {list} from './textList'
-import './TextTypingGame.css'
+import React, { useState, useEffect, useRef } from "react"
+import { list } from "./textList"
+import "./TextTypingGame.css"
 function TextTypingGame() {
-  const [inputText, setInputText] = useState('')
+  const [inputText, setInputText] = useState("")
   const [randomText, setRandomText] = useState([])
   const [volume, setVolume] = useState(0)
   const [add, setAdd] = useState(false)
@@ -45,7 +45,6 @@ function TextTypingGame() {
     }
   }
 
-
   const changeVolume = (value) => {
     if (audioGainRef.current) {
       audioGainRef.current.gain.setValueAtTime(
@@ -64,86 +63,85 @@ function TextTypingGame() {
   }, [])
 
   const getRandom = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min
   }
-  
+
   const getRandomText = () => {
     const newArr = []
-    const newText =  list[getRandom(0, list.length)].toLowerCase()
-    for(let i = 0; i < newText.length; i++){
-      newArr.push({letter: newText.charAt(i), correct: false})
+    const newText = list[getRandom(0, list.length)].toLowerCase()
+    for (let i = 0; i < newText.length; i++) {
+      newArr.push({ letter: newText.charAt(i), correct: false })
     }
     return newArr
   }
 
   const addVolume = () => {
-    setInputText('')
+    setInputText("")
     setRandomText(getRandomText())
     setAdd(true)
   }
-  
-  useEffect(()=> {
-    setRandomText(getRandomText())
-  },[])
 
-  useEffect(()=> {
+  useEffect(() => {
+    setRandomText(getRandomText())
+  }, [])
+
+  useEffect(() => {
     changeVolume(volume)
-    if(volume > 0){
+    if (volume > 0) {
       const intervalId = setInterval(() => {
-        if(add){
+        if (add) {
           setAdd(false)
-          if(volume >= 90){
+          if (volume >= 90) {
             return setVolume(100)
           }
           return setVolume(volume + randomText.length)
+        } else {
+          setVolume(volume - 1)
         }
-        else{
-            setVolume(volume -1)
-        }
-      }, 100);
-      return ()=> {
+      }, 100)
+      return () => {
         clearInterval(intervalId)
       }
     } else {
       setGameStart(false)
       return setVolume(0)
     }
-  },[volume])
+  }, [volume])
 
-  useEffect(()=> {
-    if(gameStart){
-      if(randomText){
+  useEffect(() => {
+    if (gameStart) {
+      if (randomText) {
         checkInput()
       }
     }
-  },[inputText])
+  }, [inputText])
 
   const checkInput = () => {
     const newArr = [...randomText]
-    for(let i= 0; i < correctNum; i++){
-      if(newArr[i].letter === inputText.slice(-1)){
+    for (let i = 0; i < correctNum; i++) {
+      if (newArr[i].letter === inputText.slice(-1)) {
         newArr[i].correct = true
-        setCorrectNum(newArr.filter((data)=> data.correct).length + 1)
+        setCorrectNum(newArr.filter((data) => data.correct).length + 1)
       }
-      if(newArr.length === correctNum){
+      if (newArr.length === correctNum) {
         addVolume()
         setShowMessage(true)
         setRandomText(getRandomText())
         setCorrectNum(1)
         setShowAddVolume(true)
         setPoints(points + 1)
-      } 
+      }
     }
   }
 
-  const handleKeypress = e => {
-    if(!gameStart){
+  const handleKeypress = (e) => {
+    if (!gameStart) {
       if (e.key === "Enter") {
         startGame()
       }
     }
-  };
-  
+  }
+
   const startGame = () => {
     setRandomText(getRandomText())
     setVolume(100)
@@ -154,37 +152,67 @@ function TextTypingGame() {
 
   return (
     <BaseEntry>
-    <div className="typing-game">
-      <p className="typingGame__logo">The Text Typing Game</p>
-      <div onTransitionEnd={() => setShowMessage(false)} className={`typingGame__messageContainer ${!showMessage ? 'message__hidden' : 'message__shown'}` }>
-        <p className="typingGame__message">Correct!</p>
-      </div>
-      <div className="typing__text">
-        {randomText && randomText.map((text, index)=>(
-          <p key={index} className={`${text.correct && 'active'} typingGame__text`} text>{text.letter}</p>
-        ))}
-      </div>
-      <p className="typingGame__volume">volume: {volume}% <span onTransitionEnd={() => setShowAddVolume(false)} className={`typingGame__plus ${!showAddVolume && 'message__hidden'}`}>+10</span></p>
-      <p className="typingGame__points">points: {points}</p>
-      {(chillTime && gameStart) ? null:
-        <button onClick={()=>{
-          startGame()
-        }} 
-          className="typingGame__start">press enter</button>
-      }
-
-      <form className="typingGame__form" onSubmit={e => e.preventDefault()}>
-        <div className="hide__input">
-          <p></p>
+      <div className="typing-game">
+        <p className="typingGame__logo">The Text Typing Game</p>
+        <div
+          onTransitionEnd={() => setShowMessage(false)}
+          className={`typingGame__messageContainer ${
+            !showMessage ? "message__hidden" : "message__shown"
+          }`}
+        >
+          <p className="typingGame__message">Correct!</p>
         </div>
-        <input className="typingGame__input" onBlur={({ target }) => target.focus()} autoFocus value={inputText} 
-          onChange={e => {
-            setInputText(e.target.value)
-          }}
-          onKeyPress={handleKeypress}
+        <div className="typing__text">
+          {randomText &&
+            randomText.map((text, index) => (
+              <p
+                key={index}
+                className={`${text.correct && "active"} typingGame__text`}
+                text
+              >
+                {text.letter}
+              </p>
+            ))}
+        </div>
+        <p className="typingGame__volume">
+          volume: {volume}%{" "}
+          <span
+            onTransitionEnd={() => setShowAddVolume(false)}
+            className={`typingGame__plus ${
+              !showAddVolume && "message__hidden"
+            }`}
+          >
+            +10
+          </span>
+        </p>
+        <p className="typingGame__points">points: {points}</p>
+        {chillTime && gameStart ? null : (
+          <button
+            onClick={() => {
+              startGame()
+            }}
+            className="typingGame__start"
+          >
+            press enter
+          </button>
+        )}
+
+        <form className="typingGame__form" onSubmit={(e) => e.preventDefault()}>
+          <div className="hide__input">
+            <p></p>
+          </div>
+          <input
+            className="typingGame__input"
+            onBlur={({ target }) => target.focus()}
+            autoFocus
+            value={inputText}
+            onChange={(e) => {
+              setInputText(e.target.value)
+            }}
+            onKeyPress={handleKeypress}
           />
-      </form>
-    </div>
+        </form>
+      </div>
     </BaseEntry>
   )
 }
