@@ -63,6 +63,17 @@ const entries = [
     website: "https://github.com/aindong",
     component: lazy(() => import("./ClickSpeed/ClickSpeed")),
   },
+  {
+    title: "PortalVolume",
+    slug: "PortalVolume",
+    description:
+      "Controlling the volume based on how long until the ball reaches the other portal.",
+    author: "H-isaac",
+    email: "dev.isaac23@gmail.com",
+    linkedIn: "",
+    website: "https://github.com/H-isaac23",
+    component: lazy(() => import("./PortalVolume/PortalVolume")),
+  },
 ]
 
 export default entries
