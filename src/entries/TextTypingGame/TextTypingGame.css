@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --green: #17c93e;
+  --red: #ff5a5a;
+  --hoverGreen: #007419;
+  --yellow: #c2c74c;
+}
+
+.typing-game {
+  font-family: "Press Start 2P", cursive;
+  position: relative;
+  padding: 0 2em;
+}
+
+.typingGame__logo {
+  padding-top: 2.5em;
+  align-items: center;
+  padding-bottom: 5em;
+  text-align: center;
+}
+
+.spacing {
+  height: 37px;
+}
+
+.typingGame__warning {
+  color: var(--red);
+}
+
+.typingGame__messageContainer {
+  transition: all linear 0.1s;
+  font-size: 24px;
+  padding: 12px 0;
+}
+
+.message__hidden {
+  transition: all 250ms linear 0.1s;
+  opacity: 0;
+}
+
+.message__shown {
+  font-size: 24px;
+  margin: 0;
+}
+
+.typingGame__message {
+  text-align: center;
+  padding-bottom: 2em;
+  color: var(--green);
+}
+
+.typingGame__text {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.active {
+  color: var(--green);
+}
+
+.typing__text {
+  display: flex;
+  justify-content: center;
+}
+
+.typingGame__volume,
+.typingGame__points {
+  position: relative;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 0.3em;
+}
+
+.typingGame__plus {
+  color: var(--yellow);
+  font-size: 24px;
+  transition: all linear 0.1s;
+  position: absolute;
+  top: 15px;
+}
+
+.typingGame__form {
+  position: relative;
+  height: 35px;
+}
+.typingGame__input {
+  position: absolute;
+}
+
+.hide__input {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 3;
+  height: 35px;
+}
+
+.typingGame__btn {
+  position: absolute;
+}
+
+.typingGame__start {
+  margin-top: 9em;
+  margin-bottom: 2em;
+  font-size: 16px;
+  font-family: "Press Start 2P", cursive !important;
+  height: 55px;
+  width: 256px;
+  border-radius: 10px;
+  background-color: var(--green);
+  margin-left: 15em;
+}
+
+.typingGame__start:hover {
+  background-color: var(--hoverGreen);
+}
